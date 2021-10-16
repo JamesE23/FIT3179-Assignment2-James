@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FIT3179 Assignment 2 James Eustaquio</title>
+   <!--This imports vegalite-->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <!--Links to the css file-->
+  <link rel="stylesheet" type="text/css" href="style/styles.css" media="all">
+  <!--Imports the font used-->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;1000&display=swap" rel="stylesheet">
+<!--imports pure css-->
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+  <!--sets the content to the middle-->
+  <div class="middle">
+
+    <!--Creates the heading group-->
+     <div class="pure-g">
+       <div class="pure-u-1-1">
+         <h1>INTERNET ACROSS THE WORLD</h1>
+           <h3>The <span style="color: #215ead">internet</span> was invented in 1983 and is almost everywhere we <a href="https://www.google.com.au/">look</a>. This visualisation utilises data primarily from 2018 and aims to show how much people use the <span style="color: #215ead">internet</span> in modern times.</h3>
+       </div>
+     </div>
+   <!--ends the heading group-->
+ 
+
+<!--line group-->
+     <div class="pure-g">
+       <div class="pure-u-1-1">
+        <h1></h1>
+       </div>
+     </div>
+     <!--end line group-->
+ 
+ 
+ 
+     <h2>Internet population usage percent by country</h2>
+ 
+      <!--start vis1 section-->
+     <div class="pure-g">
+ 
+       <div class="pure-u-1-3">
+         <div class="left">
+             <p>This map shows the amount of people with access to the <span style="color: #215ead"><b>internet</b></span> in a country divided by the total population. This gives the internet usage percent shown when hovering over a country.</p>
+             <p>The <span style="color: #215ead"><b>internet</b></span> is no doubt a global phenomenon as it allows anyone with access to almost magically interconnect with systems from all over the world. Giving people access to all sorts of sites and services. It truly is becoming an integral part of human life and will continue to develop further.</p>
+             <p>Use the slider to filter out certain <span style="color: #215ead"><b>internet</b></span> use percentages</p>
+         </div>
+       </div>
+ 
+       <div class="pure-u-2-3">
+         <div class="left">
+           <div id="geomap"></div>
+         </div>
+       </div>
+     </div>
+    <!--end vis1 section-->
+ 
+  <!--line2-->
+     <div class="pure-g">
+       <div class="pure-u-1-1">
+           <h1></h1>
+       </div>
+     </div>
+   <!--endline2-->
+ 
+ 
+ 
+  <h2>Total population and internet users</h2>
+ 
+     <!--start vis2 section-->
+     <div class="pure-g">
+         <div class="pure-u-2-3">
+           <div id="piechart"></div>
+         </div>
+         <div class="pure-u-1-3">
+           <div class="right">
+             <p>The <span style="color: #215ead"><b>internet</b></span> only became available to the public on April 30, 1993. By 2018 almost <b>half</b> of the population has access to the <span style="color: #215ead"><b>internet</b></span>.</p>
+             <p>The pie chart on the left puts into perspective just how big the proportion of <span style="color: #215ead"><b>internet</b></span> users are, considering that it has only been around for not even 30 years.</p>
+             <p>The <span style="color: #215ead"><b>internet</b></span> has almost become a necessity in many people's lives and is growing at a faster rate than the human population.</p>
+           </div>
+         </div>
+ 
+     </div>
+     <!--end vis2 section-->
+ 
+      <!--line3-->
+     <div class="pure-g">
+       <div class="pure-u-1-1">
+           <h1></h1>
+       </div>
+     </div>
+   <!-- end line3-->
+ 
+ 
+ 
+  <h2>Internet speeds of 10 Richest vs. Poorest countries</h2>
+ 
+           <!--start vis3-->
+     <div class="pure-g">
+      <div class="pure-u-1-1">
+          <p style="text-align:center">The top and bottom 10 countries were determined by GDP per capita and the <span style="color: #215ead"><b>internet</b></span> speed is measured by Mbps (Megabits per second). The <span style="color: #ad2121"><b>red</b></span> line shows the average <span style="color: #215ead"><b>internet</b></span> speed of each set of countries.</p>
+          <p style="text-align: center">Click and drag to see the average <span style="color: #215ead"><b>internet</b></span> speed of certain countries or hover over one to see the specific data.</p>
+      </div>
+       <div class="pure-u-1-2">
+         <div class="left">
+          <div id="bar"></div>
+         </div>
+       </div>
+       <div class="pure-u-1-3">
+         <div class="right">
+           <div id="bar2"></div>
+         </div>
+       </div>
+     </div>
+     <!--end vis3-->
+ 
+      <!--line4-->
+     <div class="pure-g">
+       <div class="pure-u-1-1">
+           <h1></h1>
+       </div>
+     </div>
+   <!--end line4-->
+ 
+   <h2>Number of internet subscriptions per 100 people</h2>
+
+      <!--start vis4-->
+     <div class="pure-g">
+       <div class="pure-u-1-1">
+        <p style="text-align:center">This chart shows the amount of broadband or <span style="color: #215ead"><b>internet</b></span> subscriptions of countries over time. The growth rapidly develops as time goes on and will continue to do so.</p>
+        <p style="text-align:center">Some popular countries are highlighted but feel free to use the drop down box to filter a specific country.</p>
+         <div class="left">
+                 <div id="line"></div>
+         </div>
+       </div>
+     </div>
+     <!--end vis4-->
+
+     <!--line5-->
+     <div class="pure-g">
+      <div class="pure-u-1-1">
+          <h1></h1>
+      </div>
+    </div>
+  <!--end line5-->
+ 
+     <div class="pure-g">
+       <div class="pure-u-1-1 footer">
+         <p>Visualisation made by <a href="https://github.com/JamesE23/FIT3179-Assignment2-James">James Eustaquio</a>. </p>
+         <p>Data sources: <a href="https://www.kaggle.com/tanuprabhu/list-of-countries-by-number-of-internet-users ">Kaggle</a>, <a href="https://www.speedtest.net/global-index">Ookla</a>, <a href="https://www.worldbank.org/en/home">World Bank</a> and <a href="https://www.worldometers.info/gdp/gdp-per-capita/">Worldometers</a>. </p>
+       </div>
+     </div>
+ 
+ 
+   </div>
+<!--allows the vegalite visualisations to load on the webpage-->
+<script>
+var vg_1 = "idioms/geomap.json";
+  vegaEmbed('#geomap', vg_1, {"actions": false}).then(function(result) {
+  }).catch(console.error);
+
+  var vg_2 = "idioms/piechart.json";
+  vegaEmbed('#piechart', vg_2, {"actions": false}).then(function(result) {
+  }).catch(console.error);
+
+  var vg_3 = "idioms/bar.json";
+  vegaEmbed('#bar', vg_3, {"actions": false}).then(function(result) {
+  }).catch(console.error);
+
+  var vg_4 = "idioms/bar2.json";
+  vegaEmbed('#bar2', vg_4, {"actions": false}).then(function(result) {
+  }).catch(console.error);
+
+  var vg_5 = "idioms/line.json";
+  vegaEmbed('#line', vg_5, {"actions": false}).then(function(result) {
+  }).catch(console.error);
+</script>
+
+</body>
+</html>

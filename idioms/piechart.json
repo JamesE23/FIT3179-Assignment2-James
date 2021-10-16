@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#f6f6f600",
+  "padding": {"top": 24, "right": 24, "bottom": 24, "left": 24},
+  "data": {
+    "values": [
+      {"Amount": "‎‎‎‎‎‎ㅤㅤInternet Users", "value": 3663346115},
+      {"Amount": "Total Population", "value": 3881036775}
+    ]
+  },
+  "encoding": {
+    "theta": {"field": "value", "type": "quantitative", "stack": true},
+    "color": {
+      "field": "value",
+      "type": "nominal",
+      "scale": {"range": ["#215ead", "#d7d7d7"]},
+      "legend": null
+    },
+    "order": {"field": "value", "sort": "ascending"},
+    "tooltip": [
+      {"field": "Amount", "type": "nominal"},
+      {"field": "value", "type": "quantitative"}
+    ]
+  },
+  "layer": [
+    {"mark": {"type": "arc", "outerRadius": 150, "stroke": "#fff"}},
+    {
+      "mark": {"type": "text", "radius": 175, "fill": "#202630"},
+      "encoding": {"text": {"field": "Amount", "type": "nominal"}}
+    }
+  ],
+  "view": {"stroke": null}
+}

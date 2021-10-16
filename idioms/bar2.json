@@ -1,0 +1,57 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title":"Bottom 10 Poorest countries",
+    "width": 400,
+    "height": 300,
+    "data": {"url": "https://raw.githubusercontent.com/JamesE23/FIT3179-Assignment2-James/main/data/bottomcountriesinternet.csv"},
+    "layer": [{
+      "params": [{
+        "name": "brush",
+        "select": {"type": "interval", "encodings": ["x"]}
+      }],
+      "mark": "bar",
+      "encoding": { 
+        "x": { 
+          "field": "Country", 
+          "type": "nominal", 
+          "title": "",
+          "axis": {
+            "maxExtent": 10
+          }
+        },
+        "y": {
+          "aggregate": "mean",
+          "field": "Internet",
+          "type": "quantitative",
+          "scale": {"domain": [0, 270]}
+          
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Internet", "type": "quantitative", "title": "Internet Speed"}
+        ],
+        "opacity": {
+          "condition": {
+            "param": "brush", "value": 1
+          },
+          "value": 0.7
+        }
+      }
+    }, {
+      "transform": [{
+        "filter": {"param": "brush"}
+      }],
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "aggregate": "mean",
+          "field": "Internet",
+          "type": "quantitative",
+          "axis": {"title": "Internet speed in mbps"}
+        },
+        "color": {"value": "firebrick"},
+        "size": {"value": 3}
+        
+      }
+    }]
+  }
